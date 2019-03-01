@@ -1,0 +1,11 @@
+{
+  "automationName": "XCUITest",
+  "platformName": "IOS",
+  "platformVersion": "12.1",
+  "deviceName": "iPhone 7",
+  "webkitDebugProxyPort": 27754,
+  "wdaLocalPort": 8102,
+  "noReset": true,
+  "useNewWDA": true,
+  "newCommandTimeout": 180
+}

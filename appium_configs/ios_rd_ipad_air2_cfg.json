@@ -1,0 +1,14 @@
+{
+  "automationName": "XCUITest",
+  "platformName": "IOS",
+  "platformVersion": "12.1.2",
+  "deviceName": "EATSA iPad",
+  "udid": "149585bb84edacdc8cb18a657ac3dd09bc6d673f",
+  "wdaLocalPort": 8202,
+  "webkitDebugProxyPort": 27753,
+  "noReset": true,
+  "useNewWDA": true,
+  "xcodeOrgId": "X3NTASB9PV",
+  "xcodeSigningId": "iPhone Developer",
+  "app": "/Users/cibanez/Downloads/eatsa.ipa"
+}

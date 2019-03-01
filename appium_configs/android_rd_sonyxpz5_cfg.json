@@ -1,0 +1,11 @@
+{
+  "automationName": "UiAutomator2",
+  "platformName": "Android",
+  "platformVersion": "7.1.1",
+  "deviceName": "Sony Z5",
+  "udid": "192.168.2.13:5555",
+  "systemPort": 4824,
+  "newCommandTimeout": 180,
+  "appWaitDuration": 30000,
+  "avdArgs": "-port 5554"
+}

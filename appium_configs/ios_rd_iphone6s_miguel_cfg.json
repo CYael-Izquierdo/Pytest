@@ -1,0 +1,13 @@
+{
+  "automationName": "XCUITest",
+  "platformName": "IOS",
+  "platformVersion": "12.1",
+  "deviceName": "iPhone 6s",
+  "udid": "0c2c09a549db5f3849ffcfb444d47babfa43fa27",
+  "wdaLocalPort": 8201,
+  "webkitDebugProxyPort": 27754,
+  "noReset": true,
+  "useNewWDA": true,
+  "xcodeOrgId": "X3NTASB9PV",
+  "xcodeSigningId": "iPhone Developer"
+}

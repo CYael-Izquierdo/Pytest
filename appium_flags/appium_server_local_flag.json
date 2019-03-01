@@ -1,0 +1,18 @@
+{
+  "address": "127.0.0.1",
+  "port": 4723,
+  "chromedriver_port": 9515,
+  "nodeconfig": null,
+  "selendroid_port": null,
+  "show_config": null,
+  "tmp_dir": null,
+  "trace_dir": null,
+  "suppress_adb_kill_server": null,
+  "reboot": null,
+  "default_device": null,
+  "instruments": null,
+  "isolate_sim_device": null,
+  "webkit_debug_proxy_port": null,
+  "force_iphone": null,
+  "force_ipad": null
+}

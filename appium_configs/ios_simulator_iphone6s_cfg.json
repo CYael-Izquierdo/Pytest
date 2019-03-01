@@ -1,0 +1,13 @@
+{
+  "automationName": "XCUITest",
+  "platformName": "IOS",
+  "platformVersion": "12.1",
+  "deviceName": "iPhone 6s Plus",
+  "webkitDebugProxyPort": 27753,
+  "wdaLocalPort": 8101,
+  "noReset": true,
+  "useNewWDA": true,
+  "fullReset": false,
+  "startIWDP": true,
+  "newCommandTimeout": 180
+}

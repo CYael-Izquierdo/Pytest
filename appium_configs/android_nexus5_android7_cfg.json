@@ -1,0 +1,10 @@
+{
+  "automationName": "UiAutomator2",
+  "platformName": "Android",
+  "platformVersion": "7.0.0",
+  "deviceName": "Nexus5",
+  "newCommandTimeout": 180,
+  "avd": "Nexus5-Android7",
+  "appWaitDuration": 30000,
+  "avdArgs": "-port 5554"
+}

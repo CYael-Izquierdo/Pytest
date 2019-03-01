@@ -1,0 +1,8 @@
+{
+  "automationName": "Appium",
+  "browserName": "OSX Sierra",
+  "version": "10.13.6",
+  "platform": "Mac",
+  "platformName": "mac",
+  "deviceName": "Mac"
+}

@@ -1,0 +1,11 @@
+{
+  "automationName": "UiAutomator2",
+  "platformName": "Android",
+  "platformVersion": "7.0",
+  "deviceName": "Moto MotoG5",
+  "udid": "192.168.7.183:5555",
+  "systemPort": 4823,
+  "newCommandTimeout": 180,
+  "appWaitDuration": 30000,
+  "avdArgs": "-port 5554"
+}

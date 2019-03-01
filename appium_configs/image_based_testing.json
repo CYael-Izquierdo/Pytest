@@ -1,0 +1,8 @@
+{
+  "automationName": "UiAutomator2",
+  "platformName": "Android",
+  "deviceName": "Image Base Testing",
+  "avd": "Nexus5-Android7",
+  "appPackage": "com.android.calculator2",
+  "appActivity": "com.android.calculator2.Calculator"
+}
