@@ -1,6 +1,5 @@
 from lib.browser_driver import BrowserDriver
 from retry.api import retry
-from lib import json_cfg_reader as cfg_reader
 
 
 class BrowserFactory:

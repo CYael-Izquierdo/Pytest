@@ -4,6 +4,7 @@ import pytest
 from retry import retry
 import subprocess
 from appium import webdriver as appium_webdriver
+from lib.browser_factory import BrowserFactory as BF
 
 COMMON_LIBRARIES = {"java": "java -version | head -1",
                     "node": "node --version",
@@ -86,7 +87,7 @@ def setup_appium_driver(config_name: str, capabilities_dict: dict = None):
     if capabilities_dict:
         capabilities.update(capabilities_dict)
 
-    server_parameters = cfg_reader.get_appium_sever_local_flags('appium_server_local_flag')
+    server_parameters = get_parameters_from_config_file("appium.local.server_flags")
 
     # UiAutomator2 port
     if capabilities.get("automationName", "N/A").lower() == "uiautomator2" and \
@@ -107,6 +108,27 @@ def setup_appium_driver(config_name: str, capabilities_dict: dict = None):
         driver = create_appium_webdriver_remote(server_url=pytest.appium_data["appium_server_url"],
                                             desired_capabilities=capabilities)
 
+    if driver is None:
+        pytest.skip("[Error] Exception occurs during appium initialization. Scenario Skipped.")
+
+    return driver
+
+
+def setup_desktop_browser(config_name):
+    json_cfg = cfg_reader.get_browser_json_config(config_file_name=config_name)
+    profile_options_dic = json_cfg.get("moz:firefoxOptions", {}).get("prefs", None)
+    platform = pytest.execution_data["platform"]
+
+    # LOCAL BROWSER
+
+    browser_name = json_cfg.get("browserName", None)
+
+    driver = BF.get_driver(browser_name=browser_name,
+                           desired_capabilities=json_cfg,
+                           firefox_profile=profile_options_dic,
+                           platform=platform)
+
+    # Check if Webdriver was correctly initialized. If not, skip test.
     if driver is None:
         pytest.skip("[Error] Exception occurs during browser initialization. Scenario Skipped.")
 
@@ -223,3 +245,30 @@ def call_command_line(command_string: str, options_list=None):
 def create_appium_webdriver_remote(server_url: str, desired_capabilities: dict):
     return appium_webdriver.Remote(command_executor=server_url,
                                    desired_capabilities=desired_capabilities)
+
+
+def get_parameters_from_config_file(section):
+    # Get Global Server Flags from behave.ini file
+    parameters = pytest.cfg.get(section)
+
+    # Filtering key/values parameters which don't have values in behave.ini file
+    parameters = filter_config_dict(parameters)
+    return parameters
+
+
+def filter_config_dict(var_dict):
+    to_be_removed = ["", "no", "None"]
+    """
+    Filter dictionary removing values in to_be_removed list.
+    :param var_dict: var dictionary
+    :return: Filtered dictionary
+    """
+    # Filtering key/values parameters which don't have values in behave.ini file
+    var_dict_filtered = []
+    # # Getting keys of the parameter which have values distinct than "" (Empty)
+    keys = [k for k in var_dict if var_dict[k] not in to_be_removed]
+    # # Using the resulting keys to re create the dict
+    var_dict_filtered = {k: var_dict[k] for k in keys}
+
+    return var_dict_filtered
+

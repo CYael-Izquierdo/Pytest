@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from lib.image_based_testing.image_webdriver_handler import ImageWebdriverHandler
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-from lib.image_based_testing.image_desktop_handler import ImageDesktopHandler
+# from lib.image_based_testing.image_desktop_handler import ImageDesktopHandler
 
 
 # Map PageElement constructor arguments to webdriver locator enums

@@ -4,7 +4,7 @@ from faker.providers import automotive
 from faker.providers import address
 from faker.providers import BaseProvider
 from pygeocoder import Geocoder
-from uszipcode import ZipcodeSearchEngine
+# from uszipcode import ZipcodeSearchEngine
 import arrow
 import random
 from retry import retry

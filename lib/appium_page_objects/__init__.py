@@ -24,8 +24,8 @@ class PageObject(object):
         in the constructor it will try and look it from the webdriver object.
     """
     def __init__(self, webdriver, root_uri=None):
-        self.w = webdriver
-        self.root_uri = root_uri if root_uri else getattr(self.w, 'root_uri', None)
+        self.driver = webdriver
+        self.root_uri = root_uri if root_uri else getattr(self.driver, 'root_uri', None)
 
     def get(self, uri):
         """
