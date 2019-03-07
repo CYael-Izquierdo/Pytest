@@ -21,7 +21,6 @@ def driver(request):
 # -------------------------------------------------------------------------------
 
 
-
 class TestRedmineProject:
     @pytest.mark.Working
     @pytest.mark.usefixtures('clean_project_list')
