@@ -18,7 +18,7 @@ def device_loop(request):
 class TestCalendar:
     @pytest.mark.Working
     @pytest.mark.parametrize("direction, day", [
-        # ('left', 'Tomorrow'),
+        ('left', 'Tomorrow'),
         ('right', 'Yesterday')
         ])
     def test_calendar_slice_in_day_view(self, device_loop, direction, day):
