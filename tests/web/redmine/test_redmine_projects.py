@@ -1,6 +1,8 @@
 import pytest
 from lib import framework
 from assertpy import soft_assertions, assert_that
+
+from page_objects.web_ui.redmine_projects_page import RedmineProjectsPage
 from tests.web.redmine import helper_redmine_project as helper
 
 # -------------------------------------------------------------------------------
@@ -32,7 +34,8 @@ class TestRedmineProject:
         helper.connect_to_redmine(driver, 'Redmine')
         helper.login_into_redmine(driver)
         project_info = helper.create_project_dict(project_name, description, identifier, homepage)
-        helper.create_project(driver, project_info)
+        project_po = RedmineProjectsPage(driver)
+        project_po.create_project(project_info)
         helper.verify_project_successfully_created(driver)
         helper.verify_that_project_is_in_projects_list(driver, project_info)
 
